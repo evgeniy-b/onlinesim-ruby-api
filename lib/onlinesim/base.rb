@@ -40,7 +40,7 @@ module OnlineSim
       if @dev_id
         params['dev_id'] = @dev_id
       end
-      resp = client.public_send("get", '/api/' + endpoint + '.php', params)
+      resp = client.public_send("get", '/api/' + endpoint + '.php', params.compact)
 
       parsed_response = Oj.load(resp.body)
 
